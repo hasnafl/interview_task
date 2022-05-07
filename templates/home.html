@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Add a New Email {% endblock %}</h1>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="alert">{{ messages }}</div>
+    {% endif %}
+    {% endwith %}
+    <form action="{{ url_for('email_save') }}" method="POST">
+        <label for="email_subject">Subject</label>
+        <br>
+        <input type="text" name="email_subject"
+               placeholder="Email Subject"
+               value="{{ request.form['email_subject'] }}"></input>
+        <br>
+
+        <label for="email_content">Email Content</label>
+        <br>
+        <textarea name="email_content"
+                  placeholder="Email content"
+                  rows="15"
+                  cols="60"
+                  >{{ request.form['email_content'] }}</textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}
