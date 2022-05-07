@@ -1,0 +1,8 @@
+celery==4.1.0
+Flask==2.0.3
+Flask_Mail==0.9.1
+Flask_RESTful==0.3.9
+Flask_SQLAlchemy==2.5.1
+pytz==2018.3
+redis==4.2.2
+SQLAlchemy==1.4.36
